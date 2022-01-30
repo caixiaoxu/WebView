@@ -16,3 +16,4 @@ rootProject.name = "WebViewAssembly"
 include ':app'
 include ':kingowebview'
 include ':kingobase'
+include ':kingocommon'
