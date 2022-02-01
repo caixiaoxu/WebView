@@ -11,4 +11,5 @@ ext {
     compileSdk = 31
     minSdk = 21
     targetSdk = 31
+    googleAutoServiceDependency = 'com.google.auto.service:auto-service:1.0.1'
 }

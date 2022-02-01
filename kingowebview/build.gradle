@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -26,8 +27,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
-    api project(":kingobase")
+    api project(":kingocommon")
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation rootProject.googleAutoServiceDependency
+    kapt rootProject.googleAutoServiceDependency
+    implementation 'io.github.scwang90:refresh-layout-kernel:2.0.5'
 }
