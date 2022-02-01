@@ -26,8 +26,8 @@ interface IKingoWebViewService {
         context: Context,
         url: String,
         title: String,
-        showActionBar: Boolean,
-        canNativeRefresh: Boolean
+        showActionBar: Boolean = true,
+        canNativeRefresh: Boolean = true
     )
 
     /**
@@ -35,5 +35,5 @@ interface IKingoWebViewService {
      * @param url 网址
      * @param canNativeRefresh 是否本地刷新
      */
-    fun getWebViewFragment(url: String, canNativeRefresh: Boolean): Fragment
+    fun getWebViewFragment(url: String, canNativeRefresh: Boolean = true): Fragment
 }

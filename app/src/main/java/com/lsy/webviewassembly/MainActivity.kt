@@ -18,13 +18,16 @@ class MainActivity : AppCompatActivity() {
             kingoWebViewService?.startWebViewActivity(
                 this,
                 "https://www.baidu.com",
-                "测试WebView",
-                true,
-                true
+                "测试WebView"
             )
         }
 
         findViewById<Button>(R.id.start_local_demo_html).setOnClickListener {
+            kingoWebViewService?.startWebViewActivity(
+                this,
+                "file:///android_asset/demo.html",
+                "测试标题"
+            )
         }
     }
 }
