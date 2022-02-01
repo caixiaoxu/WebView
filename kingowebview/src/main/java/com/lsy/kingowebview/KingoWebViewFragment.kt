@@ -1,6 +1,8 @@
 package com.lsy.kingowebview
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -68,7 +70,6 @@ class KingoWebViewFragment : Fragment(), OnRefreshListener, WebViewCallBack {
         mBinding.smartRefresh.setOnRefreshListener(this)
         url?.let {
             mBinding.webview.registerWebViewCallBack(this)
-            mBinding.webview.settings.javaScriptEnabled = true
             mBinding.webview.loadUrl(it)
         }
         return mLoadService.loadLayout
@@ -84,7 +85,6 @@ class KingoWebViewFragment : Fragment(), OnRefreshListener, WebViewCallBack {
 
     override fun pageFinished(url: String?) {
         Log.d(TAG, "pageFinished")
-        mBinding.smartRefresh.finishRefresh()
         if (mIsError) {
             mBinding.smartRefresh.setEnableRefresh(true)
             mLoadService.showCallback(ErrorCallback::class.java)
@@ -92,13 +92,14 @@ class KingoWebViewFragment : Fragment(), OnRefreshListener, WebViewCallBack {
             mLoadService.showSuccess()
             mBinding.smartRefresh.setEnableRefresh(mCanNativeRefresh)
         }
+        mBinding.smartRefresh.finishRefresh()
         mIsError = false
     }
 
     override fun onError() {
         Log.e(TAG, "onError")
-        mIsError = true
         mBinding.smartRefresh.finishRefresh()
+        mIsError = true
     }
 
     override fun updateTitle(title: String?) {
