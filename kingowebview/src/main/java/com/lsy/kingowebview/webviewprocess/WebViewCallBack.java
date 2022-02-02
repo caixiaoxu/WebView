@@ -1,4 +1,4 @@
-package com.lsy.kingowebview.webview;
+package com.lsy.kingowebview.webviewprocess;
 
 public interface WebViewCallBack {
     void pageStarted(String url);

@@ -1,7 +1,7 @@
 var kingojs = {};
 kingojs.os = {};
 kingojs.os.isIOS = /iOS|iPhone|iPad|iPod/i.test(navigator.userAgent);
-kingojs.os.isAndroid = !xiangxuejs.os.isIOS;
+kingojs.os.isAndroid = !kingojs.os.isIOS;
 kingojs.callbacks = {}
 
 kingojs.takeNativeAction = function(commandname, parameters){

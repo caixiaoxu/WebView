@@ -1,7 +1,7 @@
-package com.lsy.kingowebview.webview.webchromeclient
+package com.lsy.kingowebview.webviewprocess.webchromeclient
 
 import android.util.Log
-import com.lsy.kingowebview.webview.WebViewCallBack
+import com.lsy.kingowebview.webviewprocess.WebViewCallBack
 import android.webkit.WebChromeClient
 import android.webkit.ConsoleMessage
 import android.webkit.WebView

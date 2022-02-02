@@ -1,8 +1,6 @@
 package com.lsy.kingowebview
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +12,7 @@ import com.kingja.loadsir.core.LoadSir
 import com.lsy.kingobase.loadsir.ErrorCallback
 import com.lsy.kingobase.loadsir.LoadingCallback
 import com.lsy.kingowebview.databinding.FragmentKingoWebViewBinding
-import com.lsy.kingowebview.webview.WebViewCallBack
+import com.lsy.kingowebview.webviewprocess.WebViewCallBack
 import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 
@@ -28,7 +26,8 @@ import com.scwang.smart.refresh.layout.listener.OnRefreshListener
  * <author> <time> <version> <desc>
  * 作者姓名 修改时间 版本号 描述
  */
-class KingoWebViewFragment : Fragment(), OnRefreshListener, WebViewCallBack {
+class KingoWebViewFragment : Fragment(), OnRefreshListener,
+    WebViewCallBack {
     private val TAG = "WebViewFragment"
 
     private var url: String? = null

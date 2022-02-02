@@ -1,6 +1,6 @@
-package com.lsy.kingowebview.webview.webviewclient
+package com.lsy.kingowebview.webviewprocess.webviewclient
 
-import com.lsy.kingowebview.webview.WebViewCallBack
+import com.lsy.kingowebview.webviewprocess.WebViewCallBack
 import android.webkit.WebViewClient
 import android.graphics.Bitmap
 import android.util.Log

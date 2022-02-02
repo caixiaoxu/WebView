@@ -3,13 +3,19 @@
     package="com.lsy.webviewassembly">
 
     <application
+        android:name=".KingoWebViewApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".KingoWebViewApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WebViewAssembly">
+        <activity
+            android:name=".MainProcessTestActivityB"
+            android:exported="false" />
+        <activity
+            android:name=".MainProcessTestActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
