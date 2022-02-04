@@ -1,11 +1,26 @@
-package com.lsy.kingowebview.webviewprocess;
+package com.lsy.kingowebview.webviewprocess.webviewclient
 
-public interface WebViewCallBack {
-    void pageStarted(String url);
+/**
+ * WebView回调接口
+ */
+interface WebViewCallBack {
+    /**
+     * 页面请求开始
+     */
+    fun pageStarted(url: String?)
 
-    void pageFinished(String url);
+    /**
+     * 页面请求结束
+     */
+    fun pageFinished(url: String?)
 
-    void onError();
+    /**
+     * 页面请求错误
+     */
+    fun onError()
 
-    void updateTitle(String title);
+    /**
+     * 更新标题
+     */
+    fun updateTitle(title: String?)
 }

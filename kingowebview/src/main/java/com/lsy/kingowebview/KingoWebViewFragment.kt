@@ -12,7 +12,7 @@ import com.kingja.loadsir.core.LoadSir
 import com.lsy.kingobase.loadsir.ErrorCallback
 import com.lsy.kingobase.loadsir.LoadingCallback
 import com.lsy.kingowebview.databinding.FragmentKingoWebViewBinding
-import com.lsy.kingowebview.webviewprocess.WebViewCallBack
+import com.lsy.kingowebview.webviewprocess.webviewclient.WebViewCallBack
 import com.scwang.smart.refresh.layout.api.RefreshLayout
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 
@@ -60,13 +60,16 @@ class KingoWebViewFragment : Fragment(), OnRefreshListener,
     ): View {
         mBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_kingo_web_view, container, false)
+        //Activity启动页面
         mLoadService = LoadSir.getDefault().register(mBinding.smartRefresh) {
             mLoadService.showCallback(LoadingCallback::class.java)
             mBinding.webview.reload()
         }
+        //刷新
         mBinding.smartRefresh.setEnableRefresh(mCanNativeRefresh)
         mBinding.smartRefresh.setEnableLoadMore(false)
         mBinding.smartRefresh.setOnRefreshListener(this)
+        //WebView 加载 Url
         url?.let {
             mBinding.webview.registerWebViewCallBack(this)
             mBinding.webview.loadUrl(it)

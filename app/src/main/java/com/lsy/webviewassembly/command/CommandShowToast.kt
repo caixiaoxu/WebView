@@ -6,7 +6,7 @@ import android.widget.Toast
 import com.google.auto.service.AutoService
 import com.lsy.common.ICallbackFromMainprocessToWebViewProcessInterface
 import com.lsy.kingobase.BaseApplication
-import com.lsy.kingocommon.autoservice.Command
+import com.lsy.kingocommon.autoservice.kingowebview.Command
 
 /**
  * Title : 命令->显示Toast
@@ -29,9 +29,7 @@ class CommandShowToast : Command {
         val handler = Handler(Looper.getMainLooper())
         handler.post {
             Toast.makeText(
-                BaseApplication.sApplication,
-                parameters["message"].toString(),
-                Toast.LENGTH_SHORT
+                BaseApplication.sApplication, parameters["message"].toString(), Toast.LENGTH_SHORT
             ).show()
         }
     }

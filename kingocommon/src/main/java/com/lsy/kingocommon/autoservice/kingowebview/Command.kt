@@ -1,8 +1,10 @@
-package com.lsy.kingocommon.autoservice
+package com.lsy.kingocommon.autoservice.kingowebview
 
 import com.lsy.common.ICallbackFromMainprocessToWebViewProcessInterface
 
-
+/**
+ * 命令接口
+ */
 interface Command {
     /**
      * 设置命令名

@@ -34,6 +34,7 @@ interface IKingoWebViewService {
      * 获取WebView Fragment
      * @param url 网址
      * @param canNativeRefresh 是否本地刷新
+     * @return WebView Fragment
      */
     fun getWebViewFragment(url: String, canNativeRefresh: Boolean = true): Fragment
 }

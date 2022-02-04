@@ -19,11 +19,11 @@ object KingoServiceLoader {
      * 加载
      */
     fun <T> load(cls: Class<T>?): T? {
-        try {
-            return ServiceLoader.load(cls).iterator().next()
+        return try {
+            ServiceLoader.load(cls).iterator().next()
         } catch (e: Exception) {
             e.printStackTrace()
-            return null
+            null
         }
     }
 }

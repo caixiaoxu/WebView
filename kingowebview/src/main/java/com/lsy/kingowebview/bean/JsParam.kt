@@ -1,8 +1,10 @@
-package com.lsy.kingowebview.bean;
+package com.lsy.kingowebview.bean
 
-import com.google.gson.JsonObject;
+import com.google.gson.JsonObject
 
-public class JsParam {
-    public String name;
-    public JsonObject param;
-}
+/**
+ * Js传递参数
+ * @param name 调用指令的名
+ * @param jsonObject 指令内容
+ */
+data class JsParam(val name: String, val param: JsonObject)

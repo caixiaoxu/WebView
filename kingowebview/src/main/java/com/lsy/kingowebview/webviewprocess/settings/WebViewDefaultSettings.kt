@@ -6,15 +6,24 @@ import android.util.Log
 import android.webkit.WebSettings
 import android.webkit.WebView
 
+/**
+ * WebView的基本设置
+ */
 object WebViewDefaultSettings {
     private var mWebSettings: WebSettings? = null
 
+    /**
+     * 判断网络连接是否正常
+     */
     private fun isNetworkConnected(context: Context): Boolean {
         val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = cm.activeNetworkInfo
         return networkInfo?.isConnected ?: false
     }
 
+    /**
+     * WebView的基本设置
+     */
     fun setSettings(webView: WebView) {
         WebView.enableSlowWholeDocumentDraw()
         mWebSettings = webView.settings.apply {

@@ -1,6 +1,5 @@
 package com.lsy.kingowebview.webviewprocess.webviewclient
 
-import com.lsy.kingowebview.webviewprocess.WebViewCallBack
 import android.webkit.WebViewClient
 import android.graphics.Bitmap
 import android.util.Log
@@ -20,9 +19,7 @@ class KingoWebViewClient(var mWebViewCallBack: WebViewCallBack?) : WebViewClient
     }
 
     override fun onReceivedError(
-        view: WebView?,
-        request: WebResourceRequest?,
-        error: WebResourceError?
+        view: WebView?, request: WebResourceRequest?, error: WebResourceError?
     ) {
         mWebViewCallBack?.onError() ?: Log.e(TAG, "WebViewCallBack is null.")
     }

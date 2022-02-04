@@ -1,21 +1,16 @@
-package com.lsy.kingobase.loadsir;
+package com.lsy.kingobase.loadsir
 
-import com.kingja.loadsir.callback.Callback;
-import com.lsy.kingobase.R;
-
+import com.kingja.loadsir.callback.Callback
+import com.lsy.kingobase.R
 
 /**
- * Description:TODO
+ * Description:
  * Create Time:2017/9/4 10:22
  * Author:KingJA
  * Email:kingjavip@gmail.com
  */
-
-public class EmptyCallback extends Callback {
-
-    @Override
-    protected int onCreateView() {
-        return R.layout.layout_empty;
+class EmptyCallback : Callback() {
+    override fun onCreateView(): Int {
+        return R.layout.layout_empty
     }
-
 }

@@ -11,7 +11,7 @@ import com.lsy.kingocommon.autoservice.IKingoWebViewService
  * Author: Lsy
  * Date: 2022/1/30 6:39 下午
  * Version:
- * Description:
+ * Description: 实现WebView启动接口，并加入AutoService
  * History:
  * <author> <time> <version> <desc>
  * 作者姓名 修改时间 版本号 描述

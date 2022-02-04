@@ -10,7 +10,11 @@ import com.lsy.kingowebview.bean.JsParam
 import com.lsy.kingowebview.webviewprocess.settings.WebViewDefaultSettings
 import com.lsy.kingowebview.webviewprocess.webchromeclient.KingoWebChromeClient
 import com.lsy.kingowebview.webviewprocess.webviewclient.KingoWebViewClient
+import com.lsy.kingowebview.webviewprocess.webviewclient.WebViewCallBack
 
+/**
+ * WebView的页面回调
+ */
 class BaseWebView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
 ) : WebView(context, attrs) {
@@ -33,9 +37,7 @@ class BaseWebView @JvmOverloads constructor(
         val jsParamObject = Gson().fromJson(jsParam, JsParam::class.java)
         jsParamObject?.let {
             WebViewProcessCommandsDispatcher.executeCommand(
-                jsParamObject.name,
-                Gson().toJson(jsParamObject.param),
-                this
+                jsParamObject.name, Gson().toJson(jsParamObject.param), this
             )
         }
     }
